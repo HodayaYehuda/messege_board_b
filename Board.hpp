@@ -1,16 +1,25 @@
 #include <iostream>
 #include <string>
 #include "Direction.hpp"
-using namespace std;
+#include <map>
+using std::map;
+
+class myChar{
+public:
+char a = '_';
+};
 
 namespace ariel {
+
+
     class Board{
-        static int row=0;
-        static int col=0;
-        static map<int,map<int,string>> myMap;
+    public:
+
+	map<unsigned int,map<unsigned int,myChar>> myMap;
+
     
-    void post(int r , int c, Direction d, string str);
-    string read(int r , int c, Direction d, int l);
+    void post(unsigned int r , unsigned int c, Direction d, std::string str);
+    std::string read(unsigned int r , unsigned int c, Direction d, unsigned int l);
     void show();
 };
 }
